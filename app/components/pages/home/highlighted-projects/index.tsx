@@ -11,13 +11,14 @@ type ProjectsMadeProps = {
 }
 
 export const ProjectsMade = ({ projects } : ProjectsMadeProps) => {
+    const sliced_projects = projects.slice(0,3)
     return (
         <section className="container py-16">
             <SectionTitle subtitle="destaques" title="Projetos"/>
             <HorizontalDivider className="mb-16"/>
 
             <div>
-                {projects.map(project => (
+                {sliced_projects.map(project => (
                     <div key={project.slug}>
                         <ProjectCard project={project}/>
                         <HorizontalDivider className="my-16"/>
